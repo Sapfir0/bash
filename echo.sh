@@ -81,7 +81,8 @@ elif  [ $OPTION = 2 ]; then #advanced
     echo "\033[31mMeld\033[0m"
     apt-get install meld
 #python-lib
-apt-get install python3-pyqt5 pyqt5-dev-tools
+    echo "\033[31mpython-lib\033[0m"
+    apt-get install python3-pyqt5 pyqt5-dev-tools
 #git
     echo "\033[31mGit\033[0m"
     #git init
