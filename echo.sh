@@ -7,7 +7,7 @@ mydir=$(cat /etc/issue.net)
 
 OPTION=$(whiptail --title "$mydir" --menu "Choise your packet" 15 60 4 \
     "1" "Setup default packet" \
-    "2" "Setup advanced packet" \
+    "2" "Setup advanced packet(without sudo)" \
     "3" "Custom setup" \
     "4" "About me" 3>&1 1>&2 2>&3)
 exitstatus=$?
@@ -60,13 +60,7 @@ if [ $OPTION = 1 ]; then #стандартная установка
     echo "\033[31mSimple scan\033[0m" 
     apt-get -y remove simple-scan
 
-#dropbox
-   cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-    ~/.dropbox-dist/dropboxd
-
 #работает без дополнительнх установленных программ
-#############################################################
-elif  [ $OPTION = 2 ]; then #advanced
 
 #slack
     echo "\033[31mSlack\033[0m"
@@ -79,25 +73,39 @@ elif  [ $OPTION = 2 ]; then #advanced
     #encfs ~/encrypted ~/decrypted #first inicialization
 #meld
     echo "\033[31mMeld\033[0m"
-    apt-get install meld
+    apt-get -y install meld
 #python-lib
     echo "\033[31mpython-lib\033[0m"
-    apt-get install python3-pyqt5 pyqt5-dev-tools
+    apt-get -y install python3-pyqt5 pyqt5-dev-tools
 #git
     echo "\033[31mGit\033[0m"
     #git init
     git config --global user.email "sapfir999999@yandex.ru"
     git config --global user.name "Sapfir0"
 
+#############################################################
+elif  [ $OPTION = 2 ]; then #advanced
+
+    
+
+#dropbox
+    echo "\033[31mDropbox\033[0m"
+    wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb
+
 #QT установка с GUI
     echo "\033[31mQT\033[0m"
-    wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run
-    #cd ~/Загрузки/
-    cd ~/Downloads/ 
-    chmod u+x qt-unified-linux-x64-online.run
-    ./qt-unified-linux-x64-online.run
+    echo "\033[31mDo you want to download offline packages?\033[0m (y/n)"
 
+    read item
+    case "$item" in
+        y|Y) wget http://ftp.fau.de/qtproject/archive/qt/5.11/5.11.1/qt-opensource-linux-x64-5.11.1.run;;
+        #cd ~/Загрузки/;
 
+        n|N) wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run;;
+        #cd ~/Downloads/ ;;
+        #chmod u+x qt-opensource-linux-x64-5.11.1.run
+        #./qt-opensource-linux-x64-5.11.1.run;
+    esac
 
 ####################################################
 elif [ $OPTION = 3 ]; then 
@@ -137,5 +145,4 @@ echo "\033[31mGradle\033[0m"
 fi
 
         
-
 
