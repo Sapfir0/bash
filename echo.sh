@@ -86,7 +86,9 @@ if [ $OPTION = 1 ]; then #стандартная установка
 #############################################################
 elif  [ $OPTION = 2 ]; then #advanced
 
-    
+#VSC 
+    echo "\033[31mVSC\033[0m"
+    wget https://code.visualstudio.com/docs/?dv=linux64_deb
 
 #dropbox
     echo "\033[31mDropbox\033[0m"
