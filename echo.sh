@@ -42,8 +42,8 @@ if [ $OPTION = 1 ]; then #стандартная установка
     snap install telegram-desktop  
 
 #spotify
-    echo "\033[31mSpotify\033[0m"
-    snap install spotify
+  #  echo "\033[31mSpotify\033[0m"
+  #  snap install spotify
 
 #discord
     echo "\033[31mDiscord\033[0m"
