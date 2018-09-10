@@ -49,7 +49,6 @@ if [ $OPTION = 1 ]; then #стандартная установка
     echo "\033[31mDiscord\033[0m"
     snap install discord
 
-    echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install -y yandex-disk
 #удаление программ
     echo "\033[31m DELETED\033[0"
     echo "\033[31mRhytmbox\033[0m" 
@@ -64,8 +63,8 @@ if [ $OPTION = 1 ]; then #стандартная установка
 #работает без дополнительнх установленных программ
 
 #slack
-    echo "\033[31mSlack\033[0m"
-    snap install slack --classic
+   # echo "\033[31mSlack\033[0m"
+   # snap install slack --classic
 #encfs
     echo "\033[31mEncfs\033[0m"
     apt-get -y install encfs
@@ -83,7 +82,10 @@ if [ $OPTION = 1 ]; then #стандартная установка
     #git init
     git config --global user.email "sapfir999999@yandex.ru"
     git config --global user.name "Sapfir0"
-
+#Яд
+echo "\033[31mяд\033[0m"
+    echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install -y yandex-disk
+    yandex-disk setup
 #############################################################
 elif  [ $OPTION = 2 ]; then #advanced
 
