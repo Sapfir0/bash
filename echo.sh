@@ -49,6 +49,7 @@ if [ $OPTION = 1 ]; then #стандартная установка
     echo "\033[31mDiscord\033[0m"
     snap install discord
 
+    echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install -y yandex-disk
 #удаление программ
     echo "\033[31m DELETED\033[0"
     echo "\033[31mRhytmbox\033[0m" 
