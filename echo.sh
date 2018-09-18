@@ -1,6 +1,6 @@
 #!/bin/bash
 #плагины для браузера 
-#https://addons.mozilla.org/en-US/firefox/addon/roboform/
+#qt5 default скчать из магазина
 #https://adblockplus.org/
 
 mydir=$(cat /etc/issue.net)
