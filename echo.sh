@@ -26,7 +26,7 @@ if [ $OPTION = 1 ]; then #стандартная установка
     apt full-upgrade -y #работает
 
     echo "\033[31mUpdate some packages\033[0m"
-    PACKAGES="gcc g++ virtualbox steam radiotray snapd git pulseaudio deluge csh" 
+    PACKAGES="gcc g++ virtualbox steam radiotray snapd git pulseaudio deluge csh vim vim-runtime " 
     apt-get -y install $PACKAGES
 
 #sublime
