@@ -97,7 +97,7 @@ echo "\033[31mяд\033[0m"
     apt-get -y  install yd-tools
     yandex-disk-indicator
     
-  
+    apt install qt5-default
     apt-get install grub-customizer
     apt-get install gnome-tweak-tool
 #############################################################
