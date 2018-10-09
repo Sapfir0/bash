@@ -30,16 +30,16 @@ if [ $OPTION = 1 ]; then #стандартная установка
     apt-get -y install $PACKAGES
 
 #sublime
-    echo "\033[31mSublime\033[0m"
-    snap install sublime-text --classic
+ #   echo "\033[31mSublime\033[0m"
+ #   snap install sublime-text --classic
 
 #atom
-    echo "\033[31mAtom\033[0m"
-    snap install atom --classic
+ #   echo "\033[31mAtom\033[0m"
+ #   snap install atom --classic
 
 #telegram
-    echo "\033[31mTelegram\033[0m"
-    snap install telegram-desktop  
+ #   echo "\033[31mTelegram\033[0m"
+ #   snap install telegram-desktop  
 
 #spotify
   #  echo "\033[31mSpotify\033[0m"
@@ -66,10 +66,10 @@ if [ $OPTION = 1 ]; then #стандартная установка
    # echo "\033[31mSlack\033[0m"
    # snap install slack --classic
 #encfs
-    echo "\033[31mEncfs\033[0m"
-    apt-get -y install encfs
-    mkdir -p ~/encrypted 
-    mkdir -p ~/decrypted 
+  #  echo "\033[31mEncfs\033[0m"
+  #   apt-get -y install encfs
+  #  mkdir -p ~/encrypted 
+  #  mkdir -p ~/decrypted 
     #encfs ~/encrypted ~/decrypted #first inicialization
 #meld
     echo "\033[31mMeld\033[0m"
@@ -92,17 +92,20 @@ echo "\033[31mяд\033[0m"
     apt-get update
     apt-get -y install ubuntu-make
     umake ide visual-studio-code
+    umake ide sublime-text
+    umake ide rider
     apt-get -y  install yd-tools
     yandex-disk-indicator
     
   
     apt-get install grub-customizer
+    apt-get install gnome-tweak-tool
 #############################################################
 elif  [ $OPTION = 2 ]; then #advanced
 
 #VSC 
-    echo "\033[31mVSC\033[0m"
-    wget https://code.visualstudio.com/docs/?dv=linux64_deb
+   # echo "\033[31mVSC\033[0m"
+   # wget https://code.visualstudio.com/docs/?dv=linux64_deb
 
 #dropbox
     echo "\033[31mDropbox\033[0m"
