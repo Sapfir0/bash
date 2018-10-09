@@ -86,9 +86,12 @@ if [ $OPTION = 1 ]; then #стандартная установка
 echo "\033[31mяд\033[0m"
     echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install -y yandex-disk
     yandex-disk setup
-    add-apt-repository ppa:slytomcat/ppa
+    add-apt-repository ppa:slytomcat/ppa #yandex-indicator
+    add-apt-repository ppa:ubuntu-desktop/ubuntu-make #среды разработок
     add-apt-repository ppa:danielrichter2007/grub-customizer #grub
     apt-get update
+    apt-get -y install ubuntu-make
+    umake ide visual-studio-code
     apt-get -y  install yd-tools
     yandex-disk-indicator
     
