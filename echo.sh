@@ -21,22 +21,26 @@ fi
 
 if [ $OPTION = 1 ]; then #стандартная установка
 #update system
+
+    add-apt-repository ppa:slytomcat/ppa #yandex-indicator
+    add-apt-repository ppa:ubuntu-desktop/ubuntu-make #среды разработок
+    add-apt-repository ppa:danielrichter2007/grub-customizer #grub
+    add-apt-repository ppa:saiarcot895/chromium-dev
+    
     echo "\033[31mUpdate system\033[0m"
     apt update
     apt full-upgrade -y #работает
 
     echo "\033[31mUpdate some packages\033[0m"
-    PACKAGES="gcc g++ virtualbox steam radiotray snapd git pulseaudio deluge csh vim vim-runtime fasm " 
+    PACKAGES="gcc g++ virtualbox steam radiotray snapd git pulseaudio deluge 
+    csh vim vim-runtime fasm meld qt5-default gnome-tweak-tool grub-customizer 
+    gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make chromium-browser install yd-tools" 
     apt-get -y install $PACKAGES
 
-#sublime
- #   echo "\033[31mSublime\033[0m"
- #   snap install sublime-text --classic
-
-#atom
- #   echo "\033[31mAtom\033[0m"
- #   snap install atom --classic
-
+    umake ide visual-studio-code
+    umake ide sublime-text
+    umake ide rider
+    umake ide atom
 #telegram
  #   echo "\033[31mTelegram\033[0m"
  #   snap install telegram-desktop  
@@ -62,28 +66,13 @@ if [ $OPTION = 1 ]; then #стандартная установка
 
 #работает без дополнительнх установленных программ
 
-
 #encfs
   #  echo "\033[31mEncfs\033[0m"
   #   apt-get -y install encfs
   #  mkdir -p ~/encrypted 
   #  mkdir -p ~/decrypted 
   #  encfs ~/encrypted ~/decrypted #first inicialization
-#meld
-    echo "\033[31mMeld\033[0m"
-    apt-get -y install meld
-#qt5        
-    echo "\033[31mQT-5\033[0m"
-    apt install qt5-default
-#grub-customizer
-    echo "\033[31mGrub-customizer\033[0m"
-    apt-get install grub-customizer
-#расширенные настройки
-    echo "\033[31mgnome-tweak-tool\033[0m"
-    apt-get install gnome-tweak-tool
-#python-lib
-    echo "\033[31mpython-lib\033[0m"
-    apt-get -y install python3-pyqt5 pyqt5-dev-tools
+
 #git
     echo "\033[31mGit\033[0m"
     git config --global user.email "sapfir999999@yandex.ru"
@@ -92,16 +81,6 @@ if [ $OPTION = 1 ]; then #стандартная установка
 echo "\033[31mЯД\033[0m"
     echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install -y yandex-disk
     yandex-disk setup
-    add-apt-repository ppa:slytomcat/ppa #yandex-indicator
-    add-apt-repository ppa:ubuntu-desktop/ubuntu-make #среды разработок
-    add-apt-repository ppa:danielrichter2007/grub-customizer #grub
-    apt-get update
-    apt-get -y install ubuntu-make
-    umake ide visual-studio-code
-    umake ide sublime-text
-    umake ide rider
-    umake ide atom
-    apt-get -y  install yd-tools
     yandex-disk-indicator
 
 #############################################################
