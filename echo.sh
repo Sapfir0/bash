@@ -62,28 +62,34 @@ if [ $OPTION = 1 ]; then #стандартная установка
 
 #работает без дополнительнх установленных программ
 
-#slack
-   # echo "\033[31mSlack\033[0m"
-   # snap install slack --classic
+
 #encfs
   #  echo "\033[31mEncfs\033[0m"
   #   apt-get -y install encfs
   #  mkdir -p ~/encrypted 
   #  mkdir -p ~/decrypted 
-    #encfs ~/encrypted ~/decrypted #first inicialization
+  #  encfs ~/encrypted ~/decrypted #first inicialization
 #meld
     echo "\033[31mMeld\033[0m"
     apt-get -y install meld
+#qt5        
+    echo "\033[31mQT-5\033[0m"
+    apt install qt5-default
+#grub-customizer
+    echo "\033[31mGrub-customizer\033[0m"
+    apt-get install grub-customizer
+#расширенные настройки
+    echo "\033[31mgnome-tweak-tool\033[0m"
+    apt-get install gnome-tweak-tool
 #python-lib
     echo "\033[31mpython-lib\033[0m"
     apt-get -y install python3-pyqt5 pyqt5-dev-tools
 #git
     echo "\033[31mGit\033[0m"
-    #git init
     git config --global user.email "sapfir999999@yandex.ru"
     git config --global user.name "Sapfir0"
 #Яд
-echo "\033[31mяд\033[0m"
+echo "\033[31mЯД\033[0m"
     echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install -y yandex-disk
     yandex-disk setup
     add-apt-repository ppa:slytomcat/ppa #yandex-indicator
@@ -94,18 +100,12 @@ echo "\033[31mяд\033[0m"
     umake ide visual-studio-code
     umake ide sublime-text
     umake ide rider
+    umake ide atom
     apt-get -y  install yd-tools
     yandex-disk-indicator
-    
-    apt install qt5-default
-    apt-get install grub-customizer
-    apt-get install gnome-tweak-tool
+
 #############################################################
 elif  [ $OPTION = 2 ]; then #advanced
-
-#VSC 
-   # echo "\033[31mVSC\033[0m"
-   # wget https://code.visualstudio.com/docs/?dv=linux64_deb
 
 #dropbox
     echo "\033[31mDropbox\033[0m"
