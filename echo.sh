@@ -22,10 +22,11 @@ fi
 if [ $OPTION = 1 ]; then #стандартная установка
 #update system
 
-    add-apt-repository ppa:slytomcat/ppa #yandex-indicator
-    add-apt-repository ppa:ubuntu-desktop/ubuntu-make #среды разработок
-    add-apt-repository ppa:danielrichter2007/grub-customizer #grub
-    add-apt-repository ppa:saiarcot895/chromium-dev
+    add-apt-repository -y ppa:slytomcat/ppa #yandex-indicator
+    add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make #среды разработок
+    add-apt-repository -y ppa:danielrichter2007/grub-customizer #grub
+    add-apt-repository -y ppa:saiarcot895/chromium-dev
+    add-apt-repository -y ppa:docky-core/ppa
     
     echo "\033[31mUpdate system\033[0m"
     apt update
@@ -34,7 +35,8 @@ if [ $OPTION = 1 ]; then #стандартная установка
     echo "\033[31mUpdate some packages\033[0m"
     PACKAGES="gcc g++ virtualbox steam radiotray snapd git pulseaudio deluge 
     csh vim vim-runtime fasm meld qt5-default gnome-tweak-tool grub-customizer 
-    gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make chromium-browser install yd-tools" 
+    gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make chromium-browser 
+    gnuplot tmux install yd-tools docky" 
     apt-get -y install $PACKAGES
 
     umake ide visual-studio-code
