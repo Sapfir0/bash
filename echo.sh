@@ -26,7 +26,6 @@ if [ $OPTION = 1 ]; then #стандартная установка
     add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make #среды разработок
     add-apt-repository -y ppa:danielrichter2007/grub-customizer #grub
     add-apt-repository -y ppa:saiarcot895/chromium-dev
-    add-apt-repository -y ppa:docky-core/ppa
     
     echo "\033[31mUpdate system\033[0m"
     apt update
