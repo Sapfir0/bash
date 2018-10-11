@@ -25,35 +25,35 @@ if [ $OPTION = 1 ]; then #стандартная установка
     add-apt-repository -y ppa:slytomcat/ppa #yandex-indicator
     add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make #среды разработок
     add-apt-repository -y ppa:danielrichter2007/grub-customizer #grub
-    add-apt-repository -y ppa:saiarcot895/chromium-dev
     
     echo "\033[31mUpdate system\033[0m"
     apt update
     apt full-upgrade -y #работает
 
     echo "\033[31mUpdate some packages\033[0m"
-    PACKAGES="gcc g++ virtualbox steam radiotray snapd git pulseaudio deluge 
+    PACKAGES="gcc g++ gcc-multilib virtualbox steam radiotray snapd git pulseaudio deluge 
     csh vim vim-runtime fasm meld qt5-default gnome-tweak-tool grub-customizer 
     gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make chromium-browser 
-    gnuplot tmux install yd-tools docky" 
+    gnuplot tmux install yd-tools gdb nautilus-dropbox" 
     apt-get -y install $PACKAGES
+
+    mkdir installed
+    cd ~/installed
 
     umake ide visual-studio-code
     umake ide sublime-text
     umake ide rider
     umake ide atom
-#telegram
- #   echo "\033[31mTelegram\033[0m"
- #   snap install telegram-desktop  
-
-#spotify
-    echo "\033[31mSpotify\033[0m"
-    snap install spotify
-
-#discord
-    echo "\033[31mDiscord\033[0m"
-    snap install discord
-
+    
+    PACKAGES1="spotify chromium discord telegram-desktop"
+    snap install $PACKAGES1
+    
+    git clone https://github.com/Dman95/SASM
+    cd ~/installed/SASM
+    qmake
+    make
+    make install sasm
+    
 #удаление программ
     echo "\033[31m DELETED\033[0"
     echo "\033[31mRhytmbox\033[0m" 
@@ -73,7 +73,10 @@ if [ $OPTION = 1 ]; then #стандартная установка
   #  mkdir -p ~/encrypted 
   #  mkdir -p ~/decrypted 
   #  encfs ~/encrypted ~/decrypted #first inicialization
-
+    
+    
+    
+    
 #git
     echo "\033[31mGit\033[0m"
     git config --global user.email "sapfir999999@yandex.ru"
@@ -87,9 +90,7 @@ echo "\033[31mЯД\033[0m"
 #############################################################
 elif  [ $OPTION = 2 ]; then #advanced
 
-#dropbox
-    echo "\033[31mDropbox\033[0m"
-    wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb
+
 
 #QT установка с GUI
     echo "\033[31mQT\033[0m"
