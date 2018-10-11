@@ -39,14 +39,16 @@ if [ $OPTION = 1 ]; then #стандартная установка
     cd
     mkdir installed
     cd ~/installed
-
-    umake ide visual-studio-code
-    umake ide sublime-text
+ 
     umake ide rider
     umake ide atom
     
     PACKAGES1="spotify chromium discord telegram-desktop"
     snap install $PACKAGES1
+    snap install sublime-text --classic
+    snap install node --channel=10/stable
+    snap install vscode --classic
+    snap install gitkraken
     
     git clone https://github.com/Dman95/SASM
     cd ~/installed/SASM
