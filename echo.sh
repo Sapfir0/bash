@@ -33,10 +33,10 @@ if [ $OPTION = 1 ]; then #стандартная установка
     echo "\033[31mUpdate some packages\033[0m"
     PACKAGES="gcc g++ gcc-multilib virtualbox steam radiotray snapd git pulseaudio deluge 
     csh vim vim-runtime fasm meld qt5-default gnome-tweak-tool grub-customizer 
-    gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make chromium-browser 
-    gnuplot tmux install yd-tools gdb nautilus-dropbox" 
+    gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make gnuplot tmux yd-tools gdb nautilus-dropbox" 
     apt-get -y install $PACKAGES
 
+    cd
     mkdir installed
     cd ~/installed
 
@@ -73,9 +73,6 @@ if [ $OPTION = 1 ]; then #стандартная установка
   #  mkdir -p ~/encrypted 
   #  mkdir -p ~/decrypted 
   #  encfs ~/encrypted ~/decrypted #first inicialization
-    
-    
-    
     
 #git
     echo "\033[31mGit\033[0m"
