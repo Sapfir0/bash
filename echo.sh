@@ -32,21 +32,18 @@ if [ $OPTION = 1 ]; then #стандартная установка
 
     echo "\033[31mUpdate some packages\033[0m"
     PACKAGES="gcc g++ gcc-multilib virtualbox steam radiotray snapd git pulseaudio deluge 
-    csh vim vim-runtime fasm meld qt5-default gnome-tweak-tool grub-customizer 
-    gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make gnuplot tmux yd-tools gdb nautilus-dropbox" 
+    csh vim vim-runtime fasm meld qt5-default gnome-tweak-tool nautilus-dropbox yum npm
+    gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make gnuplot tmux yd-tools gdb grub-customizer " 
     apt-get -y install $PACKAGES
 
-
- 
     umake ide rider
     umake ide atom
     
-    PACKAGES1="spotify chromium discord telegram-desktop"
+    PACKAGES1="spotify chromium discord telegram-desktop gitkraken"
     snap install $PACKAGES1
     snap install sublime-text --classic
-    snap install node --channel=10/stable
+   # snap install node --channel=10/stable
     snap install vscode --classic
-    snap install gitkraken
 
     
 #удаление программ
@@ -134,12 +131,6 @@ echo "\033[31mGradle\033[0m"
     apt-get update
     apt-get install gradle
     elif [ $OPTION=3 ]; then
-#Chromium
-    echo "\033[31mChromium\033[0m"
-    add-apt-repository ppa:saiarcot895/chromium-dev
-    apt-get update
-    apt install chromium-browser
-
     fi
 
 fi
