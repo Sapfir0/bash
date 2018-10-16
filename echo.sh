@@ -36,9 +36,7 @@ if [ $OPTION = 1 ]; then #стандартная установка
     gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make gnuplot tmux yd-tools gdb nautilus-dropbox" 
     apt-get -y install $PACKAGES
 
-    cd
-    mkdir installed
-    cd ~/installed
+
  
     umake ide rider
     umake ide atom
@@ -49,12 +47,7 @@ if [ $OPTION = 1 ]; then #стандартная установка
     snap install node --channel=10/stable
     snap install vscode --classic
     snap install gitkraken
-    
-    git clone https://github.com/Dman95/SASM
-    cd ~/installed/SASM
-    qmake
-    make
-    make install sasm
+
     
 #удаление программ
     echo "\033[31m DELETED\033[0"
@@ -89,8 +82,16 @@ echo "\033[31mЯД\033[0m"
 #############################################################
 elif  [ $OPTION = 2 ]; then #advanced
 
+    cd
+    mkdir installed
+    cd ~/installed
 
-
+    
+    git clone https://github.com/Dman95/SASM
+    cd ~/installed/SASM
+    qmake
+    make
+    make install sasm
 #QT установка с GUI
     echo "\033[31mQT\033[0m"
     echo "\033[31mDo you want to download offline packages?\033[0m (y/n)"
