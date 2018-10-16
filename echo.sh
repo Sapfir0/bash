@@ -1,7 +1,4 @@
 #!/bin/bash
-#плагины для браузера 
-#qt5 default скчать из магазина
-#https://adblockplus.org/
 
 mydir=$(cat /etc/issue.net)
 
@@ -29,10 +26,10 @@ if [ $OPTION = 1 ]; then #стандартная установка
     echo "\033[31mUpdate system\033[0m"
     apt update
     apt full-upgrade -y #работает
-
+#qtchooser
     echo "\033[31mUpdate some packages\033[0m"
     PACKAGES="gcc g++ gcc-multilib virtualbox steam radiotray snapd git pulseaudio deluge 
-    csh vim vim-runtime fasm meld qt5-default gnome-tweak-tool nautilus-dropbox yum npm
+    csh vim vim-runtime fasm meld qt5-default gnome-tweak-tool nautilus-dropbox yum npm 
     gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make gnuplot tmux yd-tools gdb grub-customizer " 
     apt-get -y install $PACKAGES
 
@@ -47,17 +44,9 @@ if [ $OPTION = 1 ]; then #стандартная установка
 
     
 #удаление программ
+PACKAGES_DELETE="rhythmbox hexchatm thunderbird simple-scan"
     echo "\033[31m DELETED\033[0"
-    echo "\033[31mRhytmbox\033[0m" 
-    apt-get -y remove rhythmbox
-    echo "\033[31mHex-chat\033[0m" 
-    apt-get -y remove hexchat
-    echo "\033[31mThunderbird\033[0m" 
-    apt-get -y remove thunderbird
-    echo "\033[31mSimple scan\033[0m" 
-    apt-get -y remove simple-scan
-
-#работает без дополнительнх установленных программ
+    apt -y remove $PACKAGES_DELETE
 
 #encfs
   #  echo "\033[31mEncfs\033[0m"
@@ -73,7 +62,7 @@ if [ $OPTION = 1 ]; then #стандартная установка
 #Яд
 echo "\033[31mЯД\033[0m"
     echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install -y yandex-disk
-    yandex-disk setup
+    #yandex-disk setup
     yandex-disk-indicator
 
 #############################################################
