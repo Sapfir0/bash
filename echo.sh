@@ -30,7 +30,8 @@ if [ $OPTION = 1 ]; then #стандартная установка
     echo "\033[31mUpdate some packages\033[0m"
     PACKAGES="gcc g++ gcc-multilib virtualbox steam radiotray snapd git pulseaudio deluge 
     csh vim vim-runtime fasm meld qt5-default gnome-tweak-tool nautilus-dropbox yum npm 
-    gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make gnuplot tmux yd-tools gdb grub-customizer " 
+    gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make gnuplot tmux yd-tools gdb grub-customizer
+    wine-stable wine32" 
     apt-get -y install $PACKAGES
 
     umake ide rider
