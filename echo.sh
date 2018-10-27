@@ -43,7 +43,6 @@ if [ $OPTION = 1 ]; then #стандартная установка
    # snap install node --channel=10/stable
     snap install vscode --classic
 
-    
 #удаление программ
 PACKAGES_DELETE="rhythmbox hexchatm thunderbird simple-scan"
     echo "\033[31m DELETED\033[0"
@@ -55,7 +54,7 @@ PACKAGES_DELETE="rhythmbox hexchatm thunderbird simple-scan"
   #  mkdir -p ~/encrypted 
   #  mkdir -p ~/decrypted 
   #  encfs ~/encrypted ~/decrypted #first inicialization
-    
+    sudo pip3 install PyQt5
 #git
     echo "\033[31mGit\033[0m"
     git config --global user.email "sapfir999999@yandex.ru"
@@ -79,6 +78,11 @@ elif  [ $OPTION = 2 ]; then #advanced
     qmake
     make
     make install sasm
+    
+    
+    cd /tmp
+    git clone git://github.com/GM-Script-Writer-62850/Ubuntu-Mainline-Kernel-Updater
+    bash Ubuntu-Mainline-Kernel-Updater/install
 #QT установка с GUI
     echo "\033[31mQT\033[0m"
     echo "\033[31mDo you want to download offline packages?\033[0m (y/n)"
