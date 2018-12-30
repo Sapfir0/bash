@@ -31,7 +31,7 @@ if [ $OPTION = 1 ]; then #стандартная установка
     PACKAGES="gcc g++ gcc-multilib virtualbox steam radiotray snapd git pulseaudio deluge 
     csh vim vim-runtime fasm meld qt5-default gnome-tweak-tool nautilus-dropbox yum npm 
     gnome-tweak-tool python3-pyqt5 pyqt5-dev-tools ubuntu-make gnuplot tmux yd-tools gdb grub-customizer
-    wine-stable wine32" 
+    wine-stable wine32 filezilla htop" 
     apt-get -y install $PACKAGES
 
     umake ide rider
